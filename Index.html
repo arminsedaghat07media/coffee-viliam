@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کافه ویلیام | Coffee Viliam</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Tahoma,'Segoe UI',sans-serif}
+  body{background:#3E2723;color:#D7CCC8;line-height:1.9}
+
+  header{text-align:center;padding:55px 20px 45px;background:linear-gradient(180deg,#2A1A17,#3E2723);border-bottom:3px solid #FFB300}
+  header h1{font-size:2.4rem;color:#FFB300;letter-spacing:5px;font-weight:normal;text-shadow:0 2px 8px rgba(255,179,0,.2)}
+  header p{color:#A1887F;margin-top:12px;font-size:1rem}
+
+  .tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding:22px 20px;background:#2A1A17;position:sticky;top:0;z-index:10;border-bottom:1px solid #4E342E}
+  .tabs button{background:transparent;color:#A1887F;border:1px solid #4E342E;padding:9px 20px;border-radius:25px;cursor:pointer;font-family:inherit;font-size:.88rem;transition:.3s}
+  .tabs button:hover{border-color:#FFB300;color:#FFCA28}
+  .tabs button.on{background:#FFB300;color:#2A1A17;border-color:#FFB300;font-weight:bold;box-shadow:0 3px 12px rgba(255,179,0,.3)}
+
+  .wrap{max-width:720px;margin:0 auto;padding:35px 20px}
+  .cat{display:none}
+  .cat.on{display:block;animation:fade .4s}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  h2{color:#FFB300;border-bottom:2px solid #FFB300;padding-bottom:10px;margin-bottom:22px;font-size:1.35rem;font-weight:normal}
+
+  .item{padding:16px 0;border-bottom:1px dashed #5D4037}
+  .item:last-child{border-bottom:none}
+  .item .name{font-weight:bold;font-size:1.08rem;color:#D7CCC8;display:block}
+
+  footer{text-align:center;padding:45px 20px;background:#2A1A17;color:#A1887F;font-size:.88rem;margin-top:60px;border-top:3px solid #FFB300}
+  footer .info{margin-bottom:10px}
+  footer .info strong{color:#FFB300}
+  footer a{color:#FFCA28;text-decoration:none;border-bottom:1px dotted #FFCA28}
+  footer a:hover{color:#FFB300}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>COFFEE VILIAM</h1>
+  <p>کافه ویلیام — طعم اصیل قهوه</p>
+</header>
+
+<div class="tabs">
+  <button class="on" data-cat="hot">☕ قهوه گرم</button>
+  <button data-cat="warm">☕ نوشیدنی گرم</button>
+  <button data-cat="cold">🧊 نوشیدنی سرد</button>
+  <button data-cat="ice">🍦 بستنی</button>
+</div>
+
+<div class="wrap">
+
+  <!-- ☕ قهوه گرم -->
+  <div class="cat on" id="hot">
+    <h2>☕ قهوه گرم</h2>
+    <div class="item"><span class="name">قهوه ۸۰/۲۰</span></div>
+    <div class="item"><span class="name">قهوه ۷۰/۳۰</span></div>
+    <div class="item"><span class="name">قهوه ۵۰/۵۰</span></div>
+    <div class="item"><span class="name">قهوه ۶۰/۴۰</span></div>
+    <div class="item"><span class="name">قهوه آمیکو</span></div>
+    <div class="item"><span class="name">قهوه ماما لوجیا</span></div>
+    <div class="item"><span class="name">قهوه عربیکا</span></div>
+    <div class="item"><span class="name">قهوه ایلی</span></div>
+    <div class="item"><span class="name">قهوه لاوازا</span></div>
+  </div>
+
+  <!-- ☕ نوشیدنی گرم -->
+  <div class="cat" id="warm">
+    <h2>☕ نوشیدنی گرم</h2>
+    <div class="item"><span class="name">کاپوچینو</span></div>
+    <div class="item"><span class="name">نسکافه</span></div>
+    <div class="item"><span class="name">هات چاکلت</span></div>
+    <div class="item"><span class="name">چای ماسالا</span></div>
+    <div class="item"><span class="name">چای کرک</span></div>
+    <div class="item"><span class="name">شیر پسته زعفران</span></div>
+    <div class="item"><span class="name">چای سبز</span></div>
+  </div>
+
+  <!-- 🧊 نوشیدنی سرد -->
+  <div class="cat" id="cold">
+    <h2>🧊 نوشیدنی سرد</h2>
+    <div class="item"><span class="name">آیس کارامل</span></div>
+    <div class="item"><span class="name">آیس آمریکانو</span></div>
+    <div class="item"><span class="name">آیس لاته</span></div>
+    <div class="item"><span class="name">آیس پک</span></div>
+    <div class="item"><span class="name">آب هویج</span></div>
+    <div class="item"><span class="name">آب طالبی</span></div>
+    <div class="item"><span class="name">شیر موز</span></div>
+    <div class="item"><span class="name">معجون</span></div>
+  </div>
+
+  <!-- 🍦 بستنی -->
+  <div class="cat" id="ice">
+    <h2>🍦 بستنی</h2>
+    <div class="item"><span class="name">بستنی میوه‌ای</span></div>
+    <div class="item"><span class="name">بستنی سنتی</span></div>
+    <div class="item"><span class="name">بستنی مغز دار</span></div>
+    <div class="item"><span class="name">فالوده</span></div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="info"><strong>📍 آدرس:</strong> دهدشت، ۱۸۰ دستگاه، کمربندی دوم</div>
+  <div class="info"><strong>🕐 ساعت کاری:</strong> هر روز از ۷ صبح تا ۱۱ شب</div>
+  <div class="info"><strong>📸 اینستاگرام:</strong> <a href="https://instagram.com/@coffee_viliam" target="_blank">@coffee.viliam</a></div>
+  <div style="margin-top:25px;font-size:.78rem;color:#7a5a45">© ۲۰۲۵ کافه ویلیام — Coffee Viliam</div>
+</footer>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('on'))
+    document.querySelectorAll('.cat').forEach(c => c.classList.remove('on'))
+    btn.classList.add('on')
+    document.getElementById(btn.dataset.cat).classList.add('on')
+    window.scrollTo({top:0,behavior:'smooth'})
+  }
+})
+</script>
+</body>
+</html>
