@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5eee3">
+<title>کافه ویلیام | COFFEE VILIAM</title>
+<meta name="description"
+content="کافه ویلیام؛ انواع قهوه گرم، نوشیدنی‌های گرم و سرد و بستنی.">
+<style>
+/* =========================
+   تنظیمات اصلی
+========================= */
+:root {
+    --cream: #f5eee3;
+    --cream-light: #fffaf3;
+    --brown: #684632;
+    --brown-dark: #39271e;
+    --brown-soft: #8b6b54;
+    --gold: #b99265;
+    --border: #e8d8c5;
+    --shadow: 0 8px 30px rgba(65, 43, 29, .07);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    background: var(--cream);
+    color: var(--brown-dark);
+    line-height: 1.8;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+button {
+    font: inherit;
+}
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+.container {
+    width: min(1100px, 90%);
+    margin-inline: auto;
+}
+/* =========================
+   سربرگ
+========================= */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 250, 243, .94);
+    border-bottom: 1px solid rgba(104, 70, 50, .10);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+.header-inner {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+.logo {
+    color: var(--brown-dark);
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: .5px;
+}
+.logo span {
+    color: var(--gold);
+}
+.header-location {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background: var(--brown);
+    color: white;
+    font-size: 12px;
+    transition: background .22s ease, transform .22s ease;
+}
+.header-location:hover {
+    background: var(--brown-dark);
+}
+.header-location:active {
+    transform: scale(.96);
+}
+/* =========================
+   بخش معرفی
+========================= */
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    text-align: center;
+    padding: 95px 20px 75px;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(255,255,255,.8),
+            transparent 65%
+        );
+}
+.hero::before,
+.hero::after {
+    content: "☕";
+    position: absolute;
+    z-index: -1;
+    font-size: clamp(75px, 13vw, 140px);
+    opacity: .07;
+    pointer-events: none;
+    animation: coffeeFloat 7s ease-in-out infinite;
+}
+.hero::before {
+    top: 20px;
+    right: 5%;
+}
+.hero::after {
+    bottom: 15px;
+    left: 5%;
+    animation-delay: -3s;
+}
+.hero-label {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+    animation: fadeUp .7s ease-out both;
+}
+.hero h1 {
+    font-size: clamp(42px, 8vw, 76px);
+    line-height: 1.4;
+    color: var(--brown-dark);
+    font-weight: 900;
+    animation: fadeUp .8s ease-out both;
+}
+.hero h1 span {
+    color: var(--brown);
+}
+.hero-description {
+    max-width: 500px;
+    margin: 18px auto 28px;
+    color: var(--brown-soft);
+    font-size: 14px;
+    line-height: 2.2;
+    animation: fadeUp .9s ease-out both;
+}
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    animation: fadeUp 1s ease-out both;
+}
+/* =========================
+   دکمه‌ها
+========================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 12px 22px;
+    border-radius: 40px;
+    border: 1px solid transparent;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition:
+        transform .22s ease,
+        background-color .22s ease,
+        box-shadow .22s ease;
+}
+.btn-primary {
+    background: var(--brown);
+    color: white;
+    box-shadow: 0 6px 18px rgba(104,70,50,.14);
+}
+.btn-primary:hover {
+    background: var(--brown-dark);
+    box-shadow: 0 9px 24px rgba(104,70,50,.2);
+    transform: translateY(-2px);
+}
+.btn-secondary {
+    color: var(--brown);
+    background: rgba(255,250,243,.8);
+    border-color: var(--border);
+}
+.btn-secondary:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+.btn:active {
+    transform: scale(.97);
+}
+/* =========================
+   معرفی منو
+========================= */
+.menu-section {
+    padding: 65px 0 80px;
+}
+.section-heading {
+    text-align: center;
+    margin-bottom: 28px;
+}
+.section-heading .eyebrow {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+}
+.section-heading h2 {
+    color: var(--brown-dark);
+    font-size: clamp(25px, 5vw, 36px);
+    line-height: 1.6;
+}
+.section-heading p {
+    color: var(--brown-soft);
+    font-size: 13px;
+    margin-top: 8px;
+}
+/* =========================
+   دسته‌بندی‌های منو
+========================= */
+.category-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto 45px;
+}
+.category-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 11px 17px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    background: var(--cream-light);
+    color: var(--brown);
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        color .22s ease,
+        background-color .22s ease,
+        border-color .22s ease,
+        transform .22s ease;
+}
+.category-btn:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+.category-btn.active {
+    background: var(--brown);
+    border-color: var(--brown);
+    color: white;
+}
+/* =========================
+   بخش‌های محصولات
+========================= */
+.menu-category {
+    margin-top: 55px;
+    scroll-margin-top: 100px;
+}
+.category-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 22px;
+}
+.category-heading .heading-icon {
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 17px;
+    background: #e9d9c5;
+    font-size: 23px;
+}
+.category-heading h3 {
+    color: var(--brown-dark);
+    font-size: 21px;
+}
+.category-heading p {
+    color: var(--brown-soft);
+    font-size: 12px;
+    margin-top: 2px;
+}
+.category-line {
+    height: 1px;
+    background: var(--border);
+    flex: 1;
+    margin-right: 5px;
+}
+/* =========================
+   کارت محصولات
+========================= */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+.product-card {
+    position: relative;
+    min-height: 104px;
+    padding: 19px 17px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    overflow: hidden;
+    background: var(--cream-light);
+    border: 1px solid rgba(104,70,50,.09);
+    border-radius: 18px;
+    box-shadow: 0 3px 12px rgba(65,43,29,.025);
+    transition:
+        transform .28s ease,
+        border-color .28s ease,
+        box-shadow .28s ease;
+}
+.product-card::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 18%;
+    bottom: 18%;
+    width: 3px;
+    background: var(--gold);
+    border-radius: 3px 0 0 3px;
+    transform: scaleY(0);
+    transition: transform .25s ease;
+}
+.product-card:hover {
+    transform: translateY(-4px);
+    border-color: #dbc3a7;
+    box-shadow: var(--shadow);
+}
+.product-card:hover::after {
+    transform: scaleY(1);
+}
+.product-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: #f0e3d2;
+    font-size: 24px;
+    transition: transform .3s ease;
+}
+.product-card:hover .product-icon {
+    transform: scale(1.07) rotate(-4deg);
+}
+.product-info {
+    min-width: 0;
+}
+.product-info h4 {
+    color: var(--brown-dark);
+    font-size: 14px;
+    line-height: 1.9;
+    font-weight: bold;
+}
+.product-info p {
+    margin-top: 3px;
+    color: #a08a76;
+    font-size: 11px;
+}
+/* =========================
+   موقعیت کافه
+========================= */
+.location-section {
+    padding: 65px 0;
+    background: #eaddca;
+}
+.location-card {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 25px;
+    text-align: center;
+    border-radius: 27px;
+    border: 1px solid rgba(104,70,50,.09);
+    background: var(--cream-light);
+    box-shadow: var(--shadow);
+}
+.location-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+.location-card h2 {
+    color: var(--brown-dark);
+    font-size: 27px;
+}
+.location-card p {
+    max-width: 470px;
+    margin: 12px auto 23px;
+    color: var(--brown-soft);
+    font-size: 13px;
+    line-height: 2.2;
+}
+.location-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+/* =========================
+   اطلاعات کافه
+========================= */
+.info-section {
+    padding: 65px 0;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+.info-card {
+    padding: 23px 15px;
+    text-align: center;
+    background: var(--cream-light);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    transition: transform .25s ease;
+}
+.info-card:hover {
+    transform: translateY(-3px);
+}
+.info-icon {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+.info-card h3 {
+    font-size: 14px;
+    color: var(--brown);
+    margin-bottom: 6px;
+}
+.info-card p,
+.info-card a {
+    font-size: 12px;
+    line-height: 2;
+    color: var(--brown-soft);
+}
+.info-card a:hover {
+    color: var(--brown-dark);
+}
+/* =========================
+   پابرگ
+========================= */
+.footer {
+    background: var(--brown-dark);
+    color: #f5e8d8;
+    text-align: center;
+    padding: 35px 15px;
+}
+.footer-logo {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+.footer-logo span {
+    color: #d6b48d;
+}
+.footer p {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #d4c0ab;
+}
+.footer .copyright {
+    margin-top: 18px;
+    font-size: 11px;
+    color: #bba590;
+}
+/* =========================
+   دکمه بازگشت به بالا
+========================= */
+.back-to-top {
+    position: fixed;
+    left: 18px;
+    bottom: 20px;
+    z-index: 90;
+    width: 45px;
+    height: 45px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--brown);
+    color: white;
+    font-size: 21px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.12);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition:
+        opacity .25s ease,
+        transform .25s ease,
+        visibility .25s ease;
+}
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.back-to-top:active {
+    transform: scale(.94);
+}
+/* =========================
+   انیمیشن‌ها
+========================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 16px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes coffeeFloat {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(-4deg);
+    }
+    50% {
+        transform: translate3d(0, -10px, 0) rotate(4deg);
+    }
+}
+/* عناصر هنگام ورود به صفحه */
+.reveal {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+    transition:
+        opacity .55s ease,
+        transform .55s cubic-bezier(.2, .65, .3, 1);
+    transition-delay: var(--delay, 0ms);
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+/* =========================
+   نسخه موبایل
+========================= */
+@media (max-width: 760px) {
+    .hero {
+        padding: 75px 18px 60px;
+    }
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+    }
+    .product-card {
+        min-height: 96px;
+        padding: 14px 11px;
+        gap: 10px;
+        border-radius: 15px;
+    }
+    .product-icon {
+        width: 41px;
+        height: 41px;
+        border-radius: 13px;
+        font-size: 21px;
+    }
+    .product-info h4 {
+        font-size: 12px;
+    }
+    .product-info p {
+        font-size: 10px;
+    }
+    .category-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+        margin-bottom: 35px;
+    }
+    .category-btn {
+        width: 100%;
+        padding: 12px 7px;
+        font-size: 11px;
+    }
+    .menu-category {
+        margin-top: 43px;
+    }
+    .category-heading h3 {
+        font-size: 18px;
+    }
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 11px;
+    }
+    .info-card {
+        display: flex;
+        align-items: center;
+        text-align: right;
+        gap: 13px;
+        padding: 17px;
+    }
+    .info-icon {
+        margin: 0;
+        font-size: 25px;
+    }
+    .location-card {
+        padding: 30px 17px;
+    }
+}
+@media (max-width: 360px) {
+    .container {
+        width: 92%;
+    }
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 39px;
+    }
+    .header-location {
+        font-size: 11px;
+        padding: 9px 11px;
+    }
+    .logo {
+        font-size: 17px;
+    }
+}
+/* احترام به تنظیم کاهش حرکت دستگاه */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition-duration: .01ms !important;
+    }
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+<body>
+<!-- =========================
+     سربرگ
+========================= -->
+<header class="header">
+    <div class="container header-inner">
+        <a href="#home" class="logo">
+            COFFEE <span>VILIAM</span>
+        </a>
+        <a
+            class="header-location"
+            href="https://maps.apple.com/place?coordinate=30.802377,50.560135&name=Marked%20Location&map=explore"
+            target="_blank"
+            rel="noopener noreferrer">
+            📍 مسیریابی کافه
+        </a>
+    </div>
+</header>
+<main>
+<!-- =========================
+     معرفی کافه
+========================= -->
+<section class="hero" id="home">
+    <div class="hero-label">
+        WELCOME TO COFFEE VILIAM
+    </div>
+    <h1>
+        کافه <span>ویلیام</span>
+    </h1>
+    <p class="hero-description">
+        طعم اصیل قهوه، عطر دلنشین و لحظه‌هایی
+        برای لذت بردن از زندگی.
+        <br>
+        به دنیای گرم کافه ویلیام خوش اومدی 🤎
+    </p>
+    <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">
+            ☕ مشاهده منو
+        </a>
+        <a
+            href="https://maps.apple.com/place?coordinate=30.802377,50.560135&name=Marked%20Location&map=explore"
+            class="btn btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer">
+            📍 پیدا کردن کافه
+        </a>
+    </div>
+</section>
+<!-- =========================
+     منو
+========================= -->
+<section class="menu-section" id="menu">
+    <div class="container">
+        <div class="section-heading reveal">
+            <div class="eyebrow">OUR MENU</div>
+            <h2>منوی کافه ویلیام</h2>
+            <p>
+                نوشیدنی مورد علاقه‌ات رو انتخاب کن 🤎
+            </p>
+        </div>
+        <!-- دکمه‌های دسته‌بندی -->
+        <nav class="category-nav reveal" aria-label="دسته‌بندی منو">
+            <button
+                type="button"
+                class="category-btn active"
+                data-target="hot-coffee">
+                ☕ قهوه گرم
+            </button>
+            <button
+                type="button"
+                class="category-btn"
+                data-target="hot-drinks">
+                🍵 نوشیدنی گرم
+            </button>
+            <button
+                type="button"
+                class="category-btn"
+                data-target="cold-drinks">
+                🧊 نوشیدنی سرد
+            </button>
+            <button
+                type="button"
+                class="category-btn"
+                data-target="ice-cream">
+                🍦 بستنی
+            </button>
+        </nav>
+        <!-- =====================
+             قهوه گرم
+        ====================== -->
+        <section class="menu-category" id="hot-coffee">
+            <div class="category-heading reveal">
+                <div class="heading-icon">☕</div>
+                <div>
+                    <h3>قهوه گرم</h3>
+                    <p>انتخابی برای عاشقان قهوه</p>
+                </div>
+                <div class="category-line"></div>
+            </div>
+            <div class="products-grid">
+                <article class="product-card reveal">
+                    <div class="product-icon">☕</div>
+                    <div class="product-info">
+                        <h4>قهوه ۸۰/۲۰</h4>
+                        <p>قهوه گرم</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">☕</div>
+                    <div class="product-info">
+                        <h4>قهوه ۷۰/۳۰</h4>
+                        <p>قهوه گرم</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">☕</div>
+                    <div class="product-info">
+                        <h4>قهوه ۵۰/۵۰</h4>
+                        <p>قهوه گرم</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">☕</div>
+                    <div class="product-info">
+                        <h4>قهوه ۶۰/۴۰</h4>
+                        <p>قهوه گرم</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🤎</div>
+                    <div class="product-info">
+                        <h4>قهوه آمیکو</h4>
+                        <p>انتخاب قهوه</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🤎</div>
+                    <div class="product-info">
+                        <h4>قهوه ماما لوجیا</h4>
+                        <p>انتخاب قهوه</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🌱</div>
+                    <div class="product-info">
+                        <h4>قهوه عربیکا</h4>
+                        <p>قهوه</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">☕</div>
+                    <div class="product-info">
+                        <h4>قهوه ایلی</h4>
+                        <p>انتخاب قهوه</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">☕</div>
+                    <div class="product-info">
+                        <h4>قهوه لاوازا</h4>
+                        <p>انتخاب قهوه</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- =====================
+             نوشیدنی گرم
+        ====================== -->
+        <section class="menu-category" id="hot-drinks">
+            <div class="category-heading reveal">
+                <div class="heading-icon">🍵</div>
+                <div>
+                    <h3>نوشیدنی گرم</h3>
+                    <p>گرم، دلنشین و دوست‌داشتنی</p>
+                </div>
+                <div class="category-line"></div>
+            </div>
+            <div class="products-grid">
+                <article class="product-card reveal">
+                    <div class="product-icon">☕</div>
+                    <div class="product-info">
+                        <h4>کاپوچینو</h4>
+                        <p>نوشیدنی گرم</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🥛</div>
+                    <div class="product-info">
+                        <h4>نسکافه</h4>
+                        <p>نوشیدنی گرم</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🍫</div>
+                    <div class="product-info">
+                        <h4>هات چاکلت</h4>
+                        <p>شکلات داغ</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🍵</div>
+                    <div class="product-info">
+                        <h4>چای ماسالا</h4>
+                        <p>نوشیدنی گرم</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🍵</div>
+                    <div class="product-info">
+                        <h4>چای کرک</h4>
+                        <p>نوشیدنی گرم</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🥛</div>
+                    <div class="product-info">
+                        <h4>شیر پسته زعفران</h4>
+                        <p>نوشیدنی گرم</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🍃</div>
+                    <div class="product-info">
+                        <h4>چای سبز</h4>
+                        <p>نوشیدنی گرم</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- =====================
+             نوشیدنی سرد
+        ====================== -->
+        <section class="menu-category" id="cold-drinks">
+            <div class="category-heading reveal">
+                <div class="heading-icon">🧊</div>
+                <div>
+                    <h3>نوشیدنی سرد</h3>
+                    <p>خنک و دلچسب</p>
+                </div>
+                <div class="category-line"></div>
+            </div>
+            <div class="products-grid">
+                <article class="product-card reveal">
+                    <div class="product-icon">🧋</div>
+                    <div class="product-info">
+                        <h4>آیس کارامل</h4>
+                        <p>نوشیدنی سرد</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🧊</div>
+                    <div class="product-info">
+                        <h4>آیس آمریکانو</h4>
+                        <p>قهوه سرد</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🥤</div>
+                    <div class="product-info">
+                        <h4>آیس لاته</h4>
+                        <p>قهوه سرد</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🍹</div>
+                    <div class="product-info">
+                        <h4>آیس پک</h4>
+                        <p>نوشیدنی سرد</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🥕</div>
+                    <div class="product-info">
+                        <h4>آب هویج</h4>
+                        <p>آبمیوه</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🍈</div>
+                    <div class="product-info">
+                        <h4>آب طالبی</h4>
+                        <p>آبمیوه</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🍌</div>
+                    <div class="product-info">
+                        <h4>شیر موز</h4>
+                        <p>نوشیدنی سرد</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🥤</div>
+                    <div class="product-info">
+                        <h4>معجون</h4>
+                        <p>نوشیدنی مقوی</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- =====================
+             بستنی
+        ====================== -->
+        <section class="menu-category" id="ice-cream">
+            <div class="category-heading reveal">
+                <div class="heading-icon">🍦</div>
+                <div>
+                    <h3>بستنی</h3>
+                    <p>یک انتخاب شیرین</p>
+                </div>
+                <div class="category-line"></div>
+            </div>
+            <div class="products-grid">
+                <article class="product-card reveal">
+                    <div class="product-icon">🍓</div>
+                    <div class="product-info">
+                        <h4>بستنی میوه‌ای</h4>
+                        <p>بستنی</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🍦</div>
+                    <div class="product-info">
+                        <h4>بستنی سنتی</h4>
+                        <p>بستنی</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🍨</div>
+                    <div class="product-info">
+                        <h4>بستنی مغز دار</h4>
+                        <p>بستنی</p>
+                    </div>
+                </article>
+                <article class="product-card reveal">
+                    <div class="product-icon">🍧</div>
+                    <div class="product-info">
+                        <h4>فالوده</h4>
+                        <p>دسر خنک</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</section>
+<!-- =========================
+     موقعیت کافه
+========================= -->
+<section class="location-section" id="location">
+    <div class="container">
+        <div class="location-card reveal">
+            <div class="location-icon">📍</div>
+            <h2>منتظرت هستیم!</h2>
+            <p>
+                کافه ویلیام در دهدشت، ۱۸۰ دستگاه،
+                کمربندی دوم.
+                <br>
+                برای دیدن موقعیت کافه و شروع مسیریابی
+                روی دکمه زیر بزن.
+            </p>
+            <div class="location-buttons">
+                <a
+                    class="btn btn-primary"
+                    href="https://maps.apple.com/place?coordinate=30.802377,50.560135&name=Marked%20Location&map=explore"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    🗺️ باز کردن نقشه
+                </a>
+                <a
+                    class="btn btn-secondary"
+                    href="https://www.google.com/maps/dir/?api=1&destination=30.802377%2C50.560135"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    🚗 مسیریابی با گوگل‌مپ
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =========================
+     اطلاعات کافه
+========================= -->
+<section class="info-section" id="contact">
+    <div class="container">
+        <div class="section-heading reveal">
+            <div class="eyebrow">FIND US</div>
+            <h2>اطلاعات کافه</h2>
+            <p>
+                برای دیدار و تجربه یک فنجان قهوه منتظرت هستیم.
+            </p>
+        </div>
+        <div class="info-grid">
+            <div class="info-card reveal">
+                <div class="info-icon">📍</div>
+                <div>
+                    <h3>آدرس کافه</h3>
+                    <p>
+                        دهدشت، ۱۸۰ دستگاه،
+                        کمربندی دوم
+                    </p>
+                </div>
+            </div>
+            <div class="info-card reveal">
+                <div class="info-icon">🕐</div>
+                <div>
+                    <h3>ساعت کاری</h3>
+                    <p>
+                        هر روز از ۷ صبح تا ۱۱ شب
+                    </p>
+                </div>
+            </div>
+            <div class="info-card reveal">
+                <div class="info-icon">📸</div>
+                <div>
+                    <h3>اینستاگرام</h3>
+                    <a
+                        href="https://www.instagram.com/coffee__viliam/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        @coffee__viliam
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+<!-- =========================
+     پابرگ
+========================= -->
+<footer class="footer">
+    <div class="footer-logo">
+        COFFEE <span>VILIAM</span> ☕
+    </div>
+    <p>
+        طعم اصیل قهوه، لحظه‌های شیرین زندگی 🤎
+    </p>
+    <div class="copyright">
+        © 2026 Coffee Viliam — تمام حقوق محفوظ است.
+    </div>
+</footer>
+<!-- دکمه بازگشت به بالا -->
+<button
+    type="button"
+    class="back-to-top"
+    id="backToTop"
+    aria-label="بازگشت به بالای صفحه">
+    ↑
+</button>
+<script>
+/* =========================
+   انیمیشن سبک هنگام اسکرول
+========================= */
+const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+const revealElements = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window && !reduceMotion) {
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.08,
+            rootMargin: "0px 0px 25px 0px"
+        }
+    );
+    revealElements.forEach((element, index) => {
+        /* تأخیر بسیار کوتاه برای حفظ روانی انیمیشن */
+        element.style.setProperty(
+            "--delay",
+            (index % 3) * 45 + "ms"
+        );
+        revealObserver.observe(element);
+    });
+} else {
+    revealElements.forEach((element) => {
+        element.classList.add("visible");
+    });
+}
+/* =========================
+   رفتن به دسته‌بندی انتخاب‌شده
+========================= */
+const categoryButtons = document.querySelectorAll(
+    ".category-btn"
+);
+categoryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const targetId = button.dataset.target;
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        categoryButtons.forEach((item) => {
+            item.classList.remove("active");
+        });
+        button.classList.add("active");
+        target.scrollIntoView({
+            behavior: reduceMotion ? "auto" : "smooth",
+            block: "start"
+        });
+    });
+});
+/* =========================
+   تشخیص دسته‌بندی در حال مشاهده
+========================= */
+const menuSections = document.querySelectorAll(
+    ".menu-category"
+);
+if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                categoryButtons.forEach((button) => {
+                    button.classList.toggle(
+                        "active",
+                        button.dataset.target === entry.target.id
+                    );
+                });
+            });
+        },
+        {
+            rootMargin: "-20% 0px -65% 0px",
+            threshold: 0
+        }
+    );
+    menuSections.forEach((section) => {
+        sectionObserver.observe(section);
+    });
+}
+/* =========================
+   دکمه بازگشت به بالا
+========================= */
+const backToTop = document.getElementById("backToTop");
+let scrollTicking = false;
+function updateScrollButton() {
+    backToTop.classList.toggle(
+        "visible",
+        window.scrollY > 450
+    );
+    scrollTicking = false;
+}
+window.addEventListener("scroll", () => {
+    if (!scrollTicking) {
+        window.requestAnimationFrame(updateScrollButton);
+        scrollTicking = true;
+    }
+}, { passive: true });
+backToTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: reduceMotion ? "auto" : "smooth"
+    });
+});
+</script>
+</body>
+</html>
